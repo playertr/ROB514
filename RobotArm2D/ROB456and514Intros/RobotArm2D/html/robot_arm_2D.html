@@ -1,0 +1,1478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.1" />
+<title>robot_arm_2D API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>robot_arm_2D</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+
+# Get the windowing packages
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QGroupBox, QSlider, QLabel, QVBoxLayout, QHBoxLayout, QPushButton
+from PyQt5.QtCore import Qt, QSize
+
+from PyQt5.QtGui import QPainter, QBrush, QPen, QFont, QColor
+
+from random import random
+
+import numpy as np
+from numpy import sin, cos, pi
+
+
+# A helper class that implements a slider with given start and end value; displays values
+class SliderDisplay(QWidget):
+    gui = None
+
+    def __init__(self, name, low, high, initial_value, ticks=500):
+        &#34;&#34;&#34;
+        Give me a name, the low and high values, and an initial value to set
+        :param name: Name displayed on slider
+        :param low: Minimum value slider returns
+        :param high: Maximum value slider returns
+        :param initial_value: Should be a value between low and high
+        :param ticks: Resolution of slider - all sliders are integer/fixed number of ticks
+        &#34;&#34;&#34;
+        # Save input values
+        self.name = name
+        self.low = low
+        self.range = high - low
+        self.ticks = ticks
+
+        # I&#39;m a widget with a text value next to a slider
+        QWidget.__init__(self)
+        layout = QHBoxLayout()
+        self.setLayout(layout)
+
+        self.slider = QSlider(Qt.Horizontal)
+        self.slider.setMinimum(0)
+        self.slider.setMaximum(ticks)
+        # call back - calls change_value when slider changed/moved
+        self.slider.valueChanged.connect(self.change_value)
+
+        # For displaying the numeric value
+        self.display = QLabel()
+        self.set_value(initial_value)
+        self.change_value()
+
+        layout.addWidget(self.display)
+        layout.addWidget(self.slider)
+
+    # Use this to get the value between low/high
+    def value(self):
+        &#34;&#34;&#34;Return the current value of the slider&#34;&#34;&#34;
+        return (self.slider.value() / self.ticks) * self.range + self.low
+
+    # Called when the value changes - resets display text
+    def change_value(self):
+        if SliderDisplay.gui:
+            SliderDisplay.gui.repaint()
+        self.display.setText(&#39;{0}: {1:.3f}&#39;.format(self.name, self.value()))
+
+    # Use this to change the value (does clamping)
+    def set_value(self, value_f):
+        &#34;&#34;&#34;Set the value of the slider
+        @param value_f: value between low and high - clamps if not&#34;&#34;&#34;
+        value_tick = self.ticks * (value_f - self.low) / self.range
+        value_tick = min(max(0, value_tick), self.ticks)
+        self.slider.setValue(int(value_tick))
+        self.display.setText(&#39;{0}: {1:.3f}&#39;.format(self.name, self.value()))
+
+
+# The main class for handling the robot drawing and geometry
+class DrawRobot(QWidget):
+    def __init__(self, in_gui):
+        super().__init__()
+
+        # In order to get to the slider values
+        self.gui = in_gui
+
+        # Title of the window
+        self.title = &#34;Robot arm&#34;
+        # output text displayed in window
+        self.text = &#34;Not reaching&#34;
+
+        # Window size
+        self.top = 15
+        self.left = 15
+        self.width = 500
+        self.height = 500
+
+        # For doing dictionaries
+        self.components = [&#39;upperarm&#39;, &#39;forearm&#39;, &#39;wrist&#39;, &#39;finger1&#39;, &#39;finger2&#39;]
+        # Set geometry
+        self.init_ui()
+
+    def init_ui(self):
+        self.text = &#34;Not reaching&#34;
+        self.setWindowTitle(self.title)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+        self.show()
+
+    # For making sure the window shows up the right size
+    def minimumSizeHint(self):
+        return QSize(self.width, self.height)
+
+    # For making sure the window shows up the right size
+    def sizeHint(self):
+        return QSize(self.width, self.height)
+
+    # What to draw - called whenever window needs to be drawn
+    def paintEvent(self, event):
+        qp = QPainter()
+        qp.begin(self)
+        self.draw_text(event, qp)
+        self.draw_target(qp)
+        self.draw_arm(qp)
+        qp.end()
+
+    # Put some text in the bottom left
+    def draw_text(self, event, qp):
+        qp.setPen(QColor(168, 34, 3))
+        qp.setFont(QFont(&#39;Decorative&#39;, 10))
+        qp.drawText(event.rect(), Qt.AlignBottom, self.text)
+
+    # Map from [0,1]x[0,1] to the width and height of the window
+    def x_map(self, x):
+        return int(x * self.width)
+
+    # Map from [0,1]x[0,1] to the width and height of the window - need to flip y
+    def y_map(self, y):
+        return self.height - int(y * self.height) - 1
+
+    # Draw a + where the target is and another where the end effector is
+    def draw_target(self, qp):
+        pen = QPen(Qt.darkGreen, 2, Qt.SolidLine)
+        qp.setPen(pen)
+        x_i = self.x_map(self.gui.reach_x.value())
+        y_i = self.y_map(self.gui.reach_y.value())
+        qp.drawLine(x_i-5, y_i, x_i+5, y_i)
+        qp.drawLine(x_i, y_i-5, x_i, y_i+5)
+
+        pt = self.arm_end_pt()
+        pen.setColor(Qt.darkRed)
+        qp.setPen(pen)
+
+        x_i = self.x_map(pt[0])
+        y_i = self.y_map(pt[1])
+        qp.drawLine(x_i-5, y_i, x_i+5, y_i)
+        qp.drawLine(x_i, y_i-5, x_i, y_i+5)
+
+    # Make a rectangle with the center at the middle of the left hand edge
+    # Width is 1/4 length
+    # returns four corners with points as row vectors
+    @staticmethod
+    def make_rect(in_len):
+        &#34;&#34;&#34;Draw a rectangle of the given length; width is 1/4 of length
+        @param: in_len desired length
+        @return: a 1x4 array of x,y values representing the four corners of the rectangle&#34;&#34;&#34;
+        x_l = 0
+        x_r = in_len
+        h = in_len/4
+        y_b = -h/2
+        y_t = y_b + h
+        return [[x_l, y_b, 1], [x_r, y_b, 1], [x_r, y_t, 1], [x_l, y_t, 1]]
+
+    # Apply the matrix m to the points in rect
+    @staticmethod
+    def transform_rect(rect, m):
+        &#34;&#34;&#34;Apply the 3x3 transformation matrix to the rectangle
+        @param: rect: Rectangle from make_rect
+        @param: m - 3x3 matrix
+        @return: a 1x4 array of x,y values of the transformed rectangle&#34;&#34;&#34;
+        rect_t = []
+        for p in rect:
+            p_new = m @ np.transpose(p)
+            rect_t.append(np.transpose(p_new))
+        return rect_t
+
+    # Create a rotation matrix
+    @staticmethod
+    def rotation_matrix(theta):
+        &#34;&#34;&#34;Create a 3x3 rotation matrix that rotates in the x,y plane
+        @param: theta - amount to rotate by in radians
+        @return: 3x3 matrix, 2D rotation plus identity &#34;&#34;&#34;
+        m_rot = np.identity(3)
+        m_rot[0][0] = cos(theta)
+        m_rot[0][1] = -sin(theta)
+        m_rot[1][0] = sin(theta)
+        m_rot[1][1] = cos(theta)
+        return m_rot
+
+    # Create a translation matrix
+    @staticmethod
+    def translation_matrix(dx, dy):
+        &#34;&#34;&#34;Create a 3x3 translation matrix that moves by dx, dy
+        @param: dx - translate by that much in x
+        @param: dy - translate by that much in y
+        @return: 3x3 matrix &#34;&#34;&#34;
+        m_trans = np.identity(3)
+        m_trans[0, 2] = dx
+        m_trans[1, 2] = dy
+        return m_trans
+
+    # Draw the given box
+    def draw_rect(self, rect, qp):
+        pen = QPen(Qt.black, 2, Qt.SolidLine)
+        qp.setPen(pen)
+
+        for i in range(0, len(rect)):
+            i_next = (i+1) % len(rect)
+            x_i = self.x_map(rect[i][0])
+            y_i = self.y_map(rect[i][1])
+            x_i_next = self.x_map(rect[i_next][0])
+            y_i_next = self.y_map(rect[i_next][1])
+            qp.drawLine(x_i, y_i, x_i_next, y_i_next)
+
+    # Return the matrices that move each of the components. Do this as a dictionary, just to be clean
+    def get_matrices(self):
+        # The values used to build the matrices
+        len_upper_arm = self.gui.length_upper_arm.value()
+        len_forearm = self.gui.length_lower_arm.value()
+        len_wrist = self.gui.length_lower_arm.value() / 4
+        len_finger = self.gui.length_fingers.value()
+        h_forearm = len_forearm/4
+        ang_shoulder = self.gui.theta_base.value()
+        ang_elbow = self.gui.theta_elbow.value()
+        ang_wrist = self.gui.theta_wrist.value()
+        ang_finger = self.gui.theta_fingers.value()
+
+        mat_ret = dict()
+
+        # begin homework 1 : Problem 2
+        # Each of these should be of the form: Translation * rotation
+        # end homework 1 : Problem 2
+        return mat_ret
+
+    def draw_arm(self, qp):
+        &#34;&#34;&#34;Draw the arm as boxes
+        :param: qp - the painter window
+        &#34;&#34;&#34;
+        pen = QPen(Qt.black, 2, Qt.SolidLine)
+        qp.setPen(pen)
+
+        # Create a rectangle for each component then move it to the correct place then draw it
+        rects = dict()
+        rects[&#39;upperarm&#39;] = self.make_rect(self.gui.length_upper_arm.value())
+        rects[&#39;forearm&#39;] = self.make_rect(self.gui.length_lower_arm.value())
+        rects[&#39;wrist&#39;] = self.make_rect(self.gui.length_lower_arm.value() / 4)
+        rects[&#39;finger1&#39;] = self.make_rect(self.gui.length_fingers.value())
+        rects[&#39;finger2&#39;] = self.make_rect(self.gui.length_fingers.value())
+        h_wrist = 0.75 * self.gui.length_lower_arm.value()/4
+
+        # begin homework 1 : Problem 2
+        # Transform and draw each component using the matrices in self.get_matrices()
+        # Example call:
+        #   rect_transform = self.transform_rect(rects[&#39;base&#39;], mat)
+        #   self.draw_rect(rect_transform, qp)
+            #   getting the translation matrix for upper arm: matrices[&#39;upperarm&#39; + &#39;_T&#39;]
+        # end homework 1 : Problem 2
+
+    def arm_end_pt(self):
+        &#34;&#34;&#34; Return the end point of the arm&#34;&#34;&#34;
+        matrices = self.get_matrices()
+        mat_accum = np.identity(3)
+        # begin homework 1 : Problem 3
+        # end homework 1 : Problem 3
+        pt_end = mat_accum[0:2, 2]
+        return pt_end
+
+
+class RobotArmGUI(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.setWindowTitle(&#39;ROB 514 2D robot arm&#39;)
+
+        # Control buttons for the interface
+        quit_button = QPushButton(&#39;Quit&#39;)
+        quit_button.clicked.connect(app.exit)
+
+        # Different do reach commands
+        reach_gradient_button = QPushButton(&#39;Reach gradient&#39;)
+        reach_gradient_button.clicked.connect(self.reach_gradient)
+
+        reach_jacobian_button = QPushButton(&#39;Reach Jacobian&#39;)
+        reach_jacobian_button.clicked.connect(self.reach_jacobian)
+
+        reaches = QGroupBox(&#39;Reaches&#39;)
+        reaches_layout = QVBoxLayout()
+        reaches_layout.addWidget(reach_gradient_button)
+        reaches_layout.addWidget(reach_jacobian_button)
+        reaches.setLayout(reaches_layout)
+
+        # The parameters of the robot arm we&#39;re simulating
+        parameters = QGroupBox(&#39;Arm parameters&#39;)
+        parameter_layout = QVBoxLayout()
+        self.theta_base = SliderDisplay(&#39;Angle base&#39;, -np.pi/2, np.pi/2, 0)
+        self.theta_elbow = SliderDisplay(&#39;Angle elbow&#39;, -np.pi/2, np.pi/2, 0)
+        self.theta_wrist = SliderDisplay(&#39;Angle wrist&#39;, -np.pi/2, np.pi/2, 0)
+        self.theta_fingers = SliderDisplay(&#39;Angle fingers&#39;, -np.pi/4, 0, -np.pi/8)
+        self.length_upper_arm = SliderDisplay(&#39;Length upper arm&#39;, 0.2, 0.4, 0.3)
+        self.length_lower_arm = SliderDisplay(&#39;Length lower arm&#39;, 0.1, 0.2, 0.15)
+        self.length_fingers = SliderDisplay(&#39;Length fingers&#39;, 0.05, 0.1, 0.075)
+        self.theta_slds = []
+        self.theta_slds.append(self.theta_base)
+        self.theta_slds.append(self.theta_elbow)
+        self.theta_slds.append(self.theta_wrist)
+
+        parameter_layout.addWidget(self.theta_base)
+        parameter_layout.addWidget(self.theta_elbow)
+        parameter_layout.addWidget(self.theta_wrist)
+        parameter_layout.addWidget(self.theta_fingers)
+        parameter_layout.addWidget(self.length_upper_arm)
+        parameter_layout.addWidget(self.length_lower_arm)
+        parameter_layout.addWidget(self.length_fingers)
+
+        parameters.setLayout(parameter_layout)
+
+        # The point to reach to
+        reach_point = QGroupBox(&#39;Reach point&#39;)
+        reach_point_layout = QVBoxLayout()
+        self.reach_x = SliderDisplay(&#39;x&#39;, 0, 1, 0.5)
+        self.reach_y = SliderDisplay(&#39;y&#39;, 0, 1, 0.5)
+        random_button = QPushButton(&#39;Random&#39;)
+        random_button.clicked.connect(self.random_reach)
+        reach_point_layout.addWidget(self.reach_x)
+        reach_point_layout.addWidget(self.reach_y)
+        reach_point_layout.addWidget(random_button)
+        reach_point.setLayout(reach_point_layout)
+
+        # The display for the graph
+        self.robot_arm = DrawRobot(self)
+
+        # The layout of the interface
+        widget = QWidget()
+        self.setCentralWidget(widget)
+
+        top_level_layout = QHBoxLayout()
+        widget.setLayout(top_level_layout)
+        left_side_layout = QVBoxLayout()
+        right_side_layout = QVBoxLayout()
+
+        left_side_layout.addWidget(reaches)
+        left_side_layout.addWidget(reach_point)
+        left_side_layout.addStretch()
+        left_side_layout.addWidget(parameters)
+
+        right_side_layout.addWidget(self.robot_arm)
+        right_side_layout.addWidget(quit_button)
+
+        top_level_layout.addLayout(left_side_layout)
+        top_level_layout.addLayout(right_side_layout)
+
+        SliderDisplay.gui = self
+
+    # generate a random reach point
+    def random_reach(self):
+        self.reach_x.set_value(random())
+        self.reach_y.set_value(random())
+        self.robot_arm.repaint()
+
+    def reach_gradient(self):
+        &#34;&#34;&#34;Align the robot end point (palm) to the target point using gradient descent&#34;&#34;&#34;
+
+        # Use the text field to say what happened
+        self.robot_arm.text = &#34;Not improved&#34;
+
+        # begin homework 2 : Problem 1
+        # Keep trying smaller increments while nothing improves
+            # calculate the current distance
+            # Try each angle in turn
+                # Gradient
+        # end homework 2 : Problem 1
+        self.robot_arm.repaint()
+
+    def reach_jacobian(self):
+        &#34;&#34;&#34; Use the Jacobian to calculate the desired angle change&#34;&#34;&#34;
+
+        # An example problem of an arm with radius 3 currently at angle theta
+        radius = 3
+        theta = 0.2
+        # Vector to the end point
+        r = [radius * cos(theta), radius * sin(theta), 0]
+        # Spin around z
+        omega_hat = [0, 0, 1]
+        # always 0 in 3rd component
+        omega_cross_r = np.cross(omega_hat, r)
+        # Desired x,y change
+        dx_dy = np.zeros([2, 1])
+        dx_dy[0, 0] = -0.01
+        dx_dy[1, 0] = -0.1
+        # Jacobian
+        J = np.zeros([2, 1])
+        J[0:2, 0] = np.transpose(omega_cross_r[0:2])
+        # Solve
+        d_ang = np.linalg.lstsq(J, dx_dy, rcond=None)[0]
+        # Check result of solve - should be the same as dx_dy
+        res = J @ d_ang
+        # The actual point you end up at if you change the angle by that much
+        pt_new = [radius * cos(theta + d_ang), radius * sin(theta + d_ang)]
+
+        # begin homework 2 : Problem 2
+        # Desired change in x,y
+        # Use pseudo inverse to solve
+        # to set text
+        # self.robot_arm.text = text
+        # end homework 2 problem 2
+        self.robot_arm.repaint()
+
+    def draw(self, unused_data):
+        self.robot_arm.draw()
+
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication([])
+
+    gui = RobotArmGUI()
+
+    gui.show()
+
+    app.exec_()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="robot_arm_2D.random"><code class="name flex">
+<span>def <span class="ident">random</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>random() -&gt; x in the interval [0, 1).</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="robot_arm_2D.DrawRobot"><code class="flex name class">
+<span>class <span class="ident">DrawRobot</span></span>
+<span>(</span><span>in_gui)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>QWidget(parent: QWidget = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.WindowFlags())</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DrawRobot(QWidget):
+    def __init__(self, in_gui):
+        super().__init__()
+
+        # In order to get to the slider values
+        self.gui = in_gui
+
+        # Title of the window
+        self.title = &#34;Robot arm&#34;
+        # output text displayed in window
+        self.text = &#34;Not reaching&#34;
+
+        # Window size
+        self.top = 15
+        self.left = 15
+        self.width = 500
+        self.height = 500
+
+        # For doing dictionaries
+        self.components = [&#39;upperarm&#39;, &#39;forearm&#39;, &#39;wrist&#39;, &#39;finger1&#39;, &#39;finger2&#39;]
+        # Set geometry
+        self.init_ui()
+
+    def init_ui(self):
+        self.text = &#34;Not reaching&#34;
+        self.setWindowTitle(self.title)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+        self.show()
+
+    # For making sure the window shows up the right size
+    def minimumSizeHint(self):
+        return QSize(self.width, self.height)
+
+    # For making sure the window shows up the right size
+    def sizeHint(self):
+        return QSize(self.width, self.height)
+
+    # What to draw - called whenever window needs to be drawn
+    def paintEvent(self, event):
+        qp = QPainter()
+        qp.begin(self)
+        self.draw_text(event, qp)
+        self.draw_target(qp)
+        self.draw_arm(qp)
+        qp.end()
+
+    # Put some text in the bottom left
+    def draw_text(self, event, qp):
+        qp.setPen(QColor(168, 34, 3))
+        qp.setFont(QFont(&#39;Decorative&#39;, 10))
+        qp.drawText(event.rect(), Qt.AlignBottom, self.text)
+
+    # Map from [0,1]x[0,1] to the width and height of the window
+    def x_map(self, x):
+        return int(x * self.width)
+
+    # Map from [0,1]x[0,1] to the width and height of the window - need to flip y
+    def y_map(self, y):
+        return self.height - int(y * self.height) - 1
+
+    # Draw a + where the target is and another where the end effector is
+    def draw_target(self, qp):
+        pen = QPen(Qt.darkGreen, 2, Qt.SolidLine)
+        qp.setPen(pen)
+        x_i = self.x_map(self.gui.reach_x.value())
+        y_i = self.y_map(self.gui.reach_y.value())
+        qp.drawLine(x_i-5, y_i, x_i+5, y_i)
+        qp.drawLine(x_i, y_i-5, x_i, y_i+5)
+
+        pt = self.arm_end_pt()
+        pen.setColor(Qt.darkRed)
+        qp.setPen(pen)
+
+        x_i = self.x_map(pt[0])
+        y_i = self.y_map(pt[1])
+        qp.drawLine(x_i-5, y_i, x_i+5, y_i)
+        qp.drawLine(x_i, y_i-5, x_i, y_i+5)
+
+    # Make a rectangle with the center at the middle of the left hand edge
+    # Width is 1/4 length
+    # returns four corners with points as row vectors
+    @staticmethod
+    def make_rect(in_len):
+        &#34;&#34;&#34;Draw a rectangle of the given length; width is 1/4 of length
+        @param: in_len desired length
+        @return: a 1x4 array of x,y values representing the four corners of the rectangle&#34;&#34;&#34;
+        x_l = 0
+        x_r = in_len
+        h = in_len/4
+        y_b = -h/2
+        y_t = y_b + h
+        return [[x_l, y_b, 1], [x_r, y_b, 1], [x_r, y_t, 1], [x_l, y_t, 1]]
+
+    # Apply the matrix m to the points in rect
+    @staticmethod
+    def transform_rect(rect, m):
+        &#34;&#34;&#34;Apply the 3x3 transformation matrix to the rectangle
+        @param: rect: Rectangle from make_rect
+        @param: m - 3x3 matrix
+        @return: a 1x4 array of x,y values of the transformed rectangle&#34;&#34;&#34;
+        rect_t = []
+        for p in rect:
+            p_new = m @ np.transpose(p)
+            rect_t.append(np.transpose(p_new))
+        return rect_t
+
+    # Create a rotation matrix
+    @staticmethod
+    def rotation_matrix(theta):
+        &#34;&#34;&#34;Create a 3x3 rotation matrix that rotates in the x,y plane
+        @param: theta - amount to rotate by in radians
+        @return: 3x3 matrix, 2D rotation plus identity &#34;&#34;&#34;
+        m_rot = np.identity(3)
+        m_rot[0][0] = cos(theta)
+        m_rot[0][1] = -sin(theta)
+        m_rot[1][0] = sin(theta)
+        m_rot[1][1] = cos(theta)
+        return m_rot
+
+    # Create a translation matrix
+    @staticmethod
+    def translation_matrix(dx, dy):
+        &#34;&#34;&#34;Create a 3x3 translation matrix that moves by dx, dy
+        @param: dx - translate by that much in x
+        @param: dy - translate by that much in y
+        @return: 3x3 matrix &#34;&#34;&#34;
+        m_trans = np.identity(3)
+        m_trans[0, 2] = dx
+        m_trans[1, 2] = dy
+        return m_trans
+
+    # Draw the given box
+    def draw_rect(self, rect, qp):
+        pen = QPen(Qt.black, 2, Qt.SolidLine)
+        qp.setPen(pen)
+
+        for i in range(0, len(rect)):
+            i_next = (i+1) % len(rect)
+            x_i = self.x_map(rect[i][0])
+            y_i = self.y_map(rect[i][1])
+            x_i_next = self.x_map(rect[i_next][0])
+            y_i_next = self.y_map(rect[i_next][1])
+            qp.drawLine(x_i, y_i, x_i_next, y_i_next)
+
+    # Return the matrices that move each of the components. Do this as a dictionary, just to be clean
+    def get_matrices(self):
+        # The values used to build the matrices
+        len_upper_arm = self.gui.length_upper_arm.value()
+        len_forearm = self.gui.length_lower_arm.value()
+        len_wrist = self.gui.length_lower_arm.value() / 4
+        len_finger = self.gui.length_fingers.value()
+        h_forearm = len_forearm/4
+        ang_shoulder = self.gui.theta_base.value()
+        ang_elbow = self.gui.theta_elbow.value()
+        ang_wrist = self.gui.theta_wrist.value()
+        ang_finger = self.gui.theta_fingers.value()
+
+        mat_ret = dict()
+
+        # begin homework 1 : Problem 2
+        # Each of these should be of the form: Translation * rotation
+        # end homework 1 : Problem 2
+        return mat_ret
+
+    def draw_arm(self, qp):
+        &#34;&#34;&#34;Draw the arm as boxes
+        :param: qp - the painter window
+        &#34;&#34;&#34;
+        pen = QPen(Qt.black, 2, Qt.SolidLine)
+        qp.setPen(pen)
+
+        # Create a rectangle for each component then move it to the correct place then draw it
+        rects = dict()
+        rects[&#39;upperarm&#39;] = self.make_rect(self.gui.length_upper_arm.value())
+        rects[&#39;forearm&#39;] = self.make_rect(self.gui.length_lower_arm.value())
+        rects[&#39;wrist&#39;] = self.make_rect(self.gui.length_lower_arm.value() / 4)
+        rects[&#39;finger1&#39;] = self.make_rect(self.gui.length_fingers.value())
+        rects[&#39;finger2&#39;] = self.make_rect(self.gui.length_fingers.value())
+        h_wrist = 0.75 * self.gui.length_lower_arm.value()/4
+
+        # begin homework 1 : Problem 2
+        # Transform and draw each component using the matrices in self.get_matrices()
+        # Example call:
+        #   rect_transform = self.transform_rect(rects[&#39;base&#39;], mat)
+        #   self.draw_rect(rect_transform, qp)
+            #   getting the translation matrix for upper arm: matrices[&#39;upperarm&#39; + &#39;_T&#39;]
+        # end homework 1 : Problem 2
+
+    def arm_end_pt(self):
+        &#34;&#34;&#34; Return the end point of the arm&#34;&#34;&#34;
+        matrices = self.get_matrices()
+        mat_accum = np.identity(3)
+        # begin homework 1 : Problem 3
+        # end homework 1 : Problem 3
+        pt_end = mat_accum[0:2, 2]
+        return pt_end</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="robot_arm_2D.DrawRobot.make_rect"><code class="name flex">
+<span>def <span class="ident">make_rect</span></span>(<span>in_len)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draw a rectangle of the given length; width is 1/4 of length
+@param: in_len desired length
+@return: a 1x4 array of x,y values representing the four corners of the rectangle</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def make_rect(in_len):
+    &#34;&#34;&#34;Draw a rectangle of the given length; width is 1/4 of length
+    @param: in_len desired length
+    @return: a 1x4 array of x,y values representing the four corners of the rectangle&#34;&#34;&#34;
+    x_l = 0
+    x_r = in_len
+    h = in_len/4
+    y_b = -h/2
+    y_t = y_b + h
+    return [[x_l, y_b, 1], [x_r, y_b, 1], [x_r, y_t, 1], [x_l, y_t, 1]]</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.rotation_matrix"><code class="name flex">
+<span>def <span class="ident">rotation_matrix</span></span>(<span>theta)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a 3x3 rotation matrix that rotates in the x,y plane
+@param: theta - amount to rotate by in radians
+@return: 3x3 matrix, 2D rotation plus identity</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def rotation_matrix(theta):
+    &#34;&#34;&#34;Create a 3x3 rotation matrix that rotates in the x,y plane
+    @param: theta - amount to rotate by in radians
+    @return: 3x3 matrix, 2D rotation plus identity &#34;&#34;&#34;
+    m_rot = np.identity(3)
+    m_rot[0][0] = cos(theta)
+    m_rot[0][1] = -sin(theta)
+    m_rot[1][0] = sin(theta)
+    m_rot[1][1] = cos(theta)
+    return m_rot</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.transform_rect"><code class="name flex">
+<span>def <span class="ident">transform_rect</span></span>(<span>rect, m)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Apply the 3x3 transformation matrix to the rectangle
+@param: rect: Rectangle from make_rect
+@param: m - 3x3 matrix
+@return: a 1x4 array of x,y values of the transformed rectangle</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def transform_rect(rect, m):
+    &#34;&#34;&#34;Apply the 3x3 transformation matrix to the rectangle
+    @param: rect: Rectangle from make_rect
+    @param: m - 3x3 matrix
+    @return: a 1x4 array of x,y values of the transformed rectangle&#34;&#34;&#34;
+    rect_t = []
+    for p in rect:
+        p_new = m @ np.transpose(p)
+        rect_t.append(np.transpose(p_new))
+    return rect_t</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.translation_matrix"><code class="name flex">
+<span>def <span class="ident">translation_matrix</span></span>(<span>dx, dy)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a 3x3 translation matrix that moves by dx, dy
+@param: dx - translate by that much in x
+@param: dy - translate by that much in y
+@return: 3x3 matrix</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def translation_matrix(dx, dy):
+    &#34;&#34;&#34;Create a 3x3 translation matrix that moves by dx, dy
+    @param: dx - translate by that much in x
+    @param: dy - translate by that much in y
+    @return: 3x3 matrix &#34;&#34;&#34;
+    m_trans = np.identity(3)
+    m_trans[0, 2] = dx
+    m_trans[1, 2] = dy
+    return m_trans</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="robot_arm_2D.DrawRobot.arm_end_pt"><code class="name flex">
+<span>def <span class="ident">arm_end_pt</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the end point of the arm</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def arm_end_pt(self):
+    &#34;&#34;&#34; Return the end point of the arm&#34;&#34;&#34;
+    matrices = self.get_matrices()
+    mat_accum = np.identity(3)
+    # begin homework 1 : Problem 3
+    # end homework 1 : Problem 3
+    pt_end = mat_accum[0:2, 2]
+    return pt_end</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.draw_arm"><code class="name flex">
+<span>def <span class="ident">draw_arm</span></span>(<span>self, qp)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Draw the arm as boxes
+:param: qp - the painter window</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_arm(self, qp):
+    &#34;&#34;&#34;Draw the arm as boxes
+    :param: qp - the painter window
+    &#34;&#34;&#34;
+    pen = QPen(Qt.black, 2, Qt.SolidLine)
+    qp.setPen(pen)
+
+    # Create a rectangle for each component then move it to the correct place then draw it
+    rects = dict()
+    rects[&#39;upperarm&#39;] = self.make_rect(self.gui.length_upper_arm.value())
+    rects[&#39;forearm&#39;] = self.make_rect(self.gui.length_lower_arm.value())
+    rects[&#39;wrist&#39;] = self.make_rect(self.gui.length_lower_arm.value() / 4)
+    rects[&#39;finger1&#39;] = self.make_rect(self.gui.length_fingers.value())
+    rects[&#39;finger2&#39;] = self.make_rect(self.gui.length_fingers.value())
+    h_wrist = 0.75 * self.gui.length_lower_arm.value()/4</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.draw_rect"><code class="name flex">
+<span>def <span class="ident">draw_rect</span></span>(<span>self, rect, qp)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_rect(self, rect, qp):
+    pen = QPen(Qt.black, 2, Qt.SolidLine)
+    qp.setPen(pen)
+
+    for i in range(0, len(rect)):
+        i_next = (i+1) % len(rect)
+        x_i = self.x_map(rect[i][0])
+        y_i = self.y_map(rect[i][1])
+        x_i_next = self.x_map(rect[i_next][0])
+        y_i_next = self.y_map(rect[i_next][1])
+        qp.drawLine(x_i, y_i, x_i_next, y_i_next)</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.draw_target"><code class="name flex">
+<span>def <span class="ident">draw_target</span></span>(<span>self, qp)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_target(self, qp):
+    pen = QPen(Qt.darkGreen, 2, Qt.SolidLine)
+    qp.setPen(pen)
+    x_i = self.x_map(self.gui.reach_x.value())
+    y_i = self.y_map(self.gui.reach_y.value())
+    qp.drawLine(x_i-5, y_i, x_i+5, y_i)
+    qp.drawLine(x_i, y_i-5, x_i, y_i+5)
+
+    pt = self.arm_end_pt()
+    pen.setColor(Qt.darkRed)
+    qp.setPen(pen)
+
+    x_i = self.x_map(pt[0])
+    y_i = self.y_map(pt[1])
+    qp.drawLine(x_i-5, y_i, x_i+5, y_i)
+    qp.drawLine(x_i, y_i-5, x_i, y_i+5)</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.draw_text"><code class="name flex">
+<span>def <span class="ident">draw_text</span></span>(<span>self, event, qp)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_text(self, event, qp):
+    qp.setPen(QColor(168, 34, 3))
+    qp.setFont(QFont(&#39;Decorative&#39;, 10))
+    qp.drawText(event.rect(), Qt.AlignBottom, self.text)</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.get_matrices"><code class="name flex">
+<span>def <span class="ident">get_matrices</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_matrices(self):
+    # The values used to build the matrices
+    len_upper_arm = self.gui.length_upper_arm.value()
+    len_forearm = self.gui.length_lower_arm.value()
+    len_wrist = self.gui.length_lower_arm.value() / 4
+    len_finger = self.gui.length_fingers.value()
+    h_forearm = len_forearm/4
+    ang_shoulder = self.gui.theta_base.value()
+    ang_elbow = self.gui.theta_elbow.value()
+    ang_wrist = self.gui.theta_wrist.value()
+    ang_finger = self.gui.theta_fingers.value()
+
+    mat_ret = dict()
+
+    # begin homework 1 : Problem 2
+    # Each of these should be of the form: Translation * rotation
+    # end homework 1 : Problem 2
+    return mat_ret</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.init_ui"><code class="name flex">
+<span>def <span class="ident">init_ui</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_ui(self):
+    self.text = &#34;Not reaching&#34;
+    self.setWindowTitle(self.title)
+    self.setGeometry(self.left, self.top, self.width, self.height)
+    self.show()</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.minimumSizeHint"><code class="name flex">
+<span>def <span class="ident">minimumSizeHint</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>minimumSizeHint(self) -&gt; QSize</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def minimumSizeHint(self):
+    return QSize(self.width, self.height)</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.paintEvent"><code class="name flex">
+<span>def <span class="ident">paintEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>paintEvent(self, QPaintEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def paintEvent(self, event):
+    qp = QPainter()
+    qp.begin(self)
+    self.draw_text(event, qp)
+    self.draw_target(qp)
+    self.draw_arm(qp)
+    qp.end()</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.sizeHint"><code class="name flex">
+<span>def <span class="ident">sizeHint</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>sizeHint(self) -&gt; QSize</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sizeHint(self):
+    return QSize(self.width, self.height)</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.x_map"><code class="name flex">
+<span>def <span class="ident">x_map</span></span>(<span>self, x)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def x_map(self, x):
+    return int(x * self.width)</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.DrawRobot.y_map"><code class="name flex">
+<span>def <span class="ident">y_map</span></span>(<span>self, y)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def y_map(self, y):
+    return self.height - int(y * self.height) - 1</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="robot_arm_2D.RobotArmGUI"><code class="flex name class">
+<span>class <span class="ident">RobotArmGUI</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>QMainWindow(parent: QWidget = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.WindowFlags())</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RobotArmGUI(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.setWindowTitle(&#39;ROB 514 2D robot arm&#39;)
+
+        # Control buttons for the interface
+        quit_button = QPushButton(&#39;Quit&#39;)
+        quit_button.clicked.connect(app.exit)
+
+        # Different do reach commands
+        reach_gradient_button = QPushButton(&#39;Reach gradient&#39;)
+        reach_gradient_button.clicked.connect(self.reach_gradient)
+
+        reach_jacobian_button = QPushButton(&#39;Reach Jacobian&#39;)
+        reach_jacobian_button.clicked.connect(self.reach_jacobian)
+
+        reaches = QGroupBox(&#39;Reaches&#39;)
+        reaches_layout = QVBoxLayout()
+        reaches_layout.addWidget(reach_gradient_button)
+        reaches_layout.addWidget(reach_jacobian_button)
+        reaches.setLayout(reaches_layout)
+
+        # The parameters of the robot arm we&#39;re simulating
+        parameters = QGroupBox(&#39;Arm parameters&#39;)
+        parameter_layout = QVBoxLayout()
+        self.theta_base = SliderDisplay(&#39;Angle base&#39;, -np.pi/2, np.pi/2, 0)
+        self.theta_elbow = SliderDisplay(&#39;Angle elbow&#39;, -np.pi/2, np.pi/2, 0)
+        self.theta_wrist = SliderDisplay(&#39;Angle wrist&#39;, -np.pi/2, np.pi/2, 0)
+        self.theta_fingers = SliderDisplay(&#39;Angle fingers&#39;, -np.pi/4, 0, -np.pi/8)
+        self.length_upper_arm = SliderDisplay(&#39;Length upper arm&#39;, 0.2, 0.4, 0.3)
+        self.length_lower_arm = SliderDisplay(&#39;Length lower arm&#39;, 0.1, 0.2, 0.15)
+        self.length_fingers = SliderDisplay(&#39;Length fingers&#39;, 0.05, 0.1, 0.075)
+        self.theta_slds = []
+        self.theta_slds.append(self.theta_base)
+        self.theta_slds.append(self.theta_elbow)
+        self.theta_slds.append(self.theta_wrist)
+
+        parameter_layout.addWidget(self.theta_base)
+        parameter_layout.addWidget(self.theta_elbow)
+        parameter_layout.addWidget(self.theta_wrist)
+        parameter_layout.addWidget(self.theta_fingers)
+        parameter_layout.addWidget(self.length_upper_arm)
+        parameter_layout.addWidget(self.length_lower_arm)
+        parameter_layout.addWidget(self.length_fingers)
+
+        parameters.setLayout(parameter_layout)
+
+        # The point to reach to
+        reach_point = QGroupBox(&#39;Reach point&#39;)
+        reach_point_layout = QVBoxLayout()
+        self.reach_x = SliderDisplay(&#39;x&#39;, 0, 1, 0.5)
+        self.reach_y = SliderDisplay(&#39;y&#39;, 0, 1, 0.5)
+        random_button = QPushButton(&#39;Random&#39;)
+        random_button.clicked.connect(self.random_reach)
+        reach_point_layout.addWidget(self.reach_x)
+        reach_point_layout.addWidget(self.reach_y)
+        reach_point_layout.addWidget(random_button)
+        reach_point.setLayout(reach_point_layout)
+
+        # The display for the graph
+        self.robot_arm = DrawRobot(self)
+
+        # The layout of the interface
+        widget = QWidget()
+        self.setCentralWidget(widget)
+
+        top_level_layout = QHBoxLayout()
+        widget.setLayout(top_level_layout)
+        left_side_layout = QVBoxLayout()
+        right_side_layout = QVBoxLayout()
+
+        left_side_layout.addWidget(reaches)
+        left_side_layout.addWidget(reach_point)
+        left_side_layout.addStretch()
+        left_side_layout.addWidget(parameters)
+
+        right_side_layout.addWidget(self.robot_arm)
+        right_side_layout.addWidget(quit_button)
+
+        top_level_layout.addLayout(left_side_layout)
+        top_level_layout.addLayout(right_side_layout)
+
+        SliderDisplay.gui = self
+
+    # generate a random reach point
+    def random_reach(self):
+        self.reach_x.set_value(random())
+        self.reach_y.set_value(random())
+        self.robot_arm.repaint()
+
+    def reach_gradient(self):
+        &#34;&#34;&#34;Align the robot end point (palm) to the target point using gradient descent&#34;&#34;&#34;
+
+        # Use the text field to say what happened
+        self.robot_arm.text = &#34;Not improved&#34;
+
+        # begin homework 2 : Problem 1
+        # Keep trying smaller increments while nothing improves
+            # calculate the current distance
+            # Try each angle in turn
+                # Gradient
+        # end homework 2 : Problem 1
+        self.robot_arm.repaint()
+
+    def reach_jacobian(self):
+        &#34;&#34;&#34; Use the Jacobian to calculate the desired angle change&#34;&#34;&#34;
+
+        # An example problem of an arm with radius 3 currently at angle theta
+        radius = 3
+        theta = 0.2
+        # Vector to the end point
+        r = [radius * cos(theta), radius * sin(theta), 0]
+        # Spin around z
+        omega_hat = [0, 0, 1]
+        # always 0 in 3rd component
+        omega_cross_r = np.cross(omega_hat, r)
+        # Desired x,y change
+        dx_dy = np.zeros([2, 1])
+        dx_dy[0, 0] = -0.01
+        dx_dy[1, 0] = -0.1
+        # Jacobian
+        J = np.zeros([2, 1])
+        J[0:2, 0] = np.transpose(omega_cross_r[0:2])
+        # Solve
+        d_ang = np.linalg.lstsq(J, dx_dy, rcond=None)[0]
+        # Check result of solve - should be the same as dx_dy
+        res = J @ d_ang
+        # The actual point you end up at if you change the angle by that much
+        pt_new = [radius * cos(theta + d_ang), radius * sin(theta + d_ang)]
+
+        # begin homework 2 : Problem 2
+        # Desired change in x,y
+        # Use pseudo inverse to solve
+        # to set text
+        # self.robot_arm.text = text
+        # end homework 2 problem 2
+        self.robot_arm.repaint()
+
+    def draw(self, unused_data):
+        self.robot_arm.draw()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QMainWindow</li>
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="robot_arm_2D.RobotArmGUI.draw"><code class="name flex">
+<span>def <span class="ident">draw</span></span>(<span>self, unused_data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw(self, unused_data):
+    self.robot_arm.draw()</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.RobotArmGUI.random_reach"><code class="name flex">
+<span>def <span class="ident">random_reach</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def random_reach(self):
+    self.reach_x.set_value(random())
+    self.reach_y.set_value(random())
+    self.robot_arm.repaint()</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.RobotArmGUI.reach_gradient"><code class="name flex">
+<span>def <span class="ident">reach_gradient</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Align the robot end point (palm) to the target point using gradient descent</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reach_gradient(self):
+    &#34;&#34;&#34;Align the robot end point (palm) to the target point using gradient descent&#34;&#34;&#34;
+
+    # Use the text field to say what happened
+    self.robot_arm.text = &#34;Not improved&#34;
+
+    # begin homework 2 : Problem 1
+    # Keep trying smaller increments while nothing improves
+        # calculate the current distance
+        # Try each angle in turn
+            # Gradient
+    # end homework 2 : Problem 1
+    self.robot_arm.repaint()</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.RobotArmGUI.reach_jacobian"><code class="name flex">
+<span>def <span class="ident">reach_jacobian</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Use the Jacobian to calculate the desired angle change</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reach_jacobian(self):
+    &#34;&#34;&#34; Use the Jacobian to calculate the desired angle change&#34;&#34;&#34;
+
+    # An example problem of an arm with radius 3 currently at angle theta
+    radius = 3
+    theta = 0.2
+    # Vector to the end point
+    r = [radius * cos(theta), radius * sin(theta), 0]
+    # Spin around z
+    omega_hat = [0, 0, 1]
+    # always 0 in 3rd component
+    omega_cross_r = np.cross(omega_hat, r)
+    # Desired x,y change
+    dx_dy = np.zeros([2, 1])
+    dx_dy[0, 0] = -0.01
+    dx_dy[1, 0] = -0.1
+    # Jacobian
+    J = np.zeros([2, 1])
+    J[0:2, 0] = np.transpose(omega_cross_r[0:2])
+    # Solve
+    d_ang = np.linalg.lstsq(J, dx_dy, rcond=None)[0]
+    # Check result of solve - should be the same as dx_dy
+    res = J @ d_ang
+    # The actual point you end up at if you change the angle by that much
+    pt_new = [radius * cos(theta + d_ang), radius * sin(theta + d_ang)]
+
+    # begin homework 2 : Problem 2
+    # Desired change in x,y
+    # Use pseudo inverse to solve
+    # to set text
+    # self.robot_arm.text = text
+    # end homework 2 problem 2
+    self.robot_arm.repaint()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="robot_arm_2D.SliderDisplay"><code class="flex name class">
+<span>class <span class="ident">SliderDisplay</span></span>
+<span>(</span><span>name, low, high, initial_value, ticks=500)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>QWidget(parent: QWidget = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.WindowFlags())</p>
+<p>Give me a name, the low and high values, and an initial value to set
+:param name: Name displayed on slider
+:param low: Minimum value slider returns
+:param high: Maximum value slider returns
+:param initial_value: Should be a value between low and high
+:param ticks: Resolution of slider - all sliders are integer/fixed number of ticks</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SliderDisplay(QWidget):
+    gui = None
+
+    def __init__(self, name, low, high, initial_value, ticks=500):
+        &#34;&#34;&#34;
+        Give me a name, the low and high values, and an initial value to set
+        :param name: Name displayed on slider
+        :param low: Minimum value slider returns
+        :param high: Maximum value slider returns
+        :param initial_value: Should be a value between low and high
+        :param ticks: Resolution of slider - all sliders are integer/fixed number of ticks
+        &#34;&#34;&#34;
+        # Save input values
+        self.name = name
+        self.low = low
+        self.range = high - low
+        self.ticks = ticks
+
+        # I&#39;m a widget with a text value next to a slider
+        QWidget.__init__(self)
+        layout = QHBoxLayout()
+        self.setLayout(layout)
+
+        self.slider = QSlider(Qt.Horizontal)
+        self.slider.setMinimum(0)
+        self.slider.setMaximum(ticks)
+        # call back - calls change_value when slider changed/moved
+        self.slider.valueChanged.connect(self.change_value)
+
+        # For displaying the numeric value
+        self.display = QLabel()
+        self.set_value(initial_value)
+        self.change_value()
+
+        layout.addWidget(self.display)
+        layout.addWidget(self.slider)
+
+    # Use this to get the value between low/high
+    def value(self):
+        &#34;&#34;&#34;Return the current value of the slider&#34;&#34;&#34;
+        return (self.slider.value() / self.ticks) * self.range + self.low
+
+    # Called when the value changes - resets display text
+    def change_value(self):
+        if SliderDisplay.gui:
+            SliderDisplay.gui.repaint()
+        self.display.setText(&#39;{0}: {1:.3f}&#39;.format(self.name, self.value()))
+
+    # Use this to change the value (does clamping)
+    def set_value(self, value_f):
+        &#34;&#34;&#34;Set the value of the slider
+        @param value_f: value between low and high - clamps if not&#34;&#34;&#34;
+        value_tick = self.ticks * (value_f - self.low) / self.range
+        value_tick = min(max(0, value_tick), self.ticks)
+        self.slider.setValue(int(value_tick))
+        self.display.setText(&#39;{0}: {1:.3f}&#39;.format(self.name, self.value()))</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="robot_arm_2D.SliderDisplay.gui"><code class="name">var <span class="ident">gui</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="robot_arm_2D.SliderDisplay.change_value"><code class="name flex">
+<span>def <span class="ident">change_value</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def change_value(self):
+    if SliderDisplay.gui:
+        SliderDisplay.gui.repaint()
+    self.display.setText(&#39;{0}: {1:.3f}&#39;.format(self.name, self.value()))</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.SliderDisplay.set_value"><code class="name flex">
+<span>def <span class="ident">set_value</span></span>(<span>self, value_f)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set the value of the slider
+@param value_f: value between low and high - clamps if not</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_value(self, value_f):
+    &#34;&#34;&#34;Set the value of the slider
+    @param value_f: value between low and high - clamps if not&#34;&#34;&#34;
+    value_tick = self.ticks * (value_f - self.low) / self.range
+    value_tick = min(max(0, value_tick), self.ticks)
+    self.slider.setValue(int(value_tick))
+    self.display.setText(&#39;{0}: {1:.3f}&#39;.format(self.name, self.value()))</code></pre>
+</details>
+</dd>
+<dt id="robot_arm_2D.SliderDisplay.value"><code class="name flex">
+<span>def <span class="ident">value</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the current value of the slider</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def value(self):
+    &#34;&#34;&#34;Return the current value of the slider&#34;&#34;&#34;
+    return (self.slider.value() / self.ticks) * self.range + self.low</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="robot_arm_2D.random" href="#robot_arm_2D.random">random</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="robot_arm_2D.DrawRobot" href="#robot_arm_2D.DrawRobot">DrawRobot</a></code></h4>
+<ul class="two-column">
+<li><code><a title="robot_arm_2D.DrawRobot.arm_end_pt" href="#robot_arm_2D.DrawRobot.arm_end_pt">arm_end_pt</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.draw_arm" href="#robot_arm_2D.DrawRobot.draw_arm">draw_arm</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.draw_rect" href="#robot_arm_2D.DrawRobot.draw_rect">draw_rect</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.draw_target" href="#robot_arm_2D.DrawRobot.draw_target">draw_target</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.draw_text" href="#robot_arm_2D.DrawRobot.draw_text">draw_text</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.get_matrices" href="#robot_arm_2D.DrawRobot.get_matrices">get_matrices</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.init_ui" href="#robot_arm_2D.DrawRobot.init_ui">init_ui</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.make_rect" href="#robot_arm_2D.DrawRobot.make_rect">make_rect</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.minimumSizeHint" href="#robot_arm_2D.DrawRobot.minimumSizeHint">minimumSizeHint</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.paintEvent" href="#robot_arm_2D.DrawRobot.paintEvent">paintEvent</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.rotation_matrix" href="#robot_arm_2D.DrawRobot.rotation_matrix">rotation_matrix</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.sizeHint" href="#robot_arm_2D.DrawRobot.sizeHint">sizeHint</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.transform_rect" href="#robot_arm_2D.DrawRobot.transform_rect">transform_rect</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.translation_matrix" href="#robot_arm_2D.DrawRobot.translation_matrix">translation_matrix</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.x_map" href="#robot_arm_2D.DrawRobot.x_map">x_map</a></code></li>
+<li><code><a title="robot_arm_2D.DrawRobot.y_map" href="#robot_arm_2D.DrawRobot.y_map">y_map</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="robot_arm_2D.RobotArmGUI" href="#robot_arm_2D.RobotArmGUI">RobotArmGUI</a></code></h4>
+<ul class="">
+<li><code><a title="robot_arm_2D.RobotArmGUI.draw" href="#robot_arm_2D.RobotArmGUI.draw">draw</a></code></li>
+<li><code><a title="robot_arm_2D.RobotArmGUI.random_reach" href="#robot_arm_2D.RobotArmGUI.random_reach">random_reach</a></code></li>
+<li><code><a title="robot_arm_2D.RobotArmGUI.reach_gradient" href="#robot_arm_2D.RobotArmGUI.reach_gradient">reach_gradient</a></code></li>
+<li><code><a title="robot_arm_2D.RobotArmGUI.reach_jacobian" href="#robot_arm_2D.RobotArmGUI.reach_jacobian">reach_jacobian</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="robot_arm_2D.SliderDisplay" href="#robot_arm_2D.SliderDisplay">SliderDisplay</a></code></h4>
+<ul class="">
+<li><code><a title="robot_arm_2D.SliderDisplay.change_value" href="#robot_arm_2D.SliderDisplay.change_value">change_value</a></code></li>
+<li><code><a title="robot_arm_2D.SliderDisplay.gui" href="#robot_arm_2D.SliderDisplay.gui">gui</a></code></li>
+<li><code><a title="robot_arm_2D.SliderDisplay.set_value" href="#robot_arm_2D.SliderDisplay.set_value">set_value</a></code></li>
+<li><code><a title="robot_arm_2D.SliderDisplay.value" href="#robot_arm_2D.SliderDisplay.value">value</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+</footer>
+</body>
+</html>
